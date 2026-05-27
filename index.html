@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marknadsplan — SE / DE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f3ef;
+  --surface: #ffffff;
+  --border: #dedad2;
+  --border-light: #ecea e4;
+  --text: #18181b;
+  --text-muted: #71717a;
+  --se: #005B99;
+  --se-mid: #0077cc;
+  --de: #C10E1B;
+  --de-mid: #e01020;
+  --accent: #005B99;
+  --header-h: 54px;
+  --controls-h: 50px;
+  --label-w: 210px;
+
+  --g-kontext: #c05621;
+  --g-strategy: #1d6fa4;
+  --g-logistics: #b45309;
+  --g-activation: #7c3aed;
+  --g-comms: #16803d;
+  --g-followup: #52525b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:13px;min-height:100vh}
+
+/* ── HEADER ── */
+.header{height:var(--header-h);background:var(--text);display:flex;align-items:stretch;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hd-brand{padding:0 22px;font-family:'Syne',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.3px;display:flex;align-items:center;gap:9px;color:#fff;border-right:1px solid rgba(255,255,255,.1);white-space:nowrap}
+.hd-brand span{opacity:.45;font-weight:400;font-size:13px;letter-spacing:.3px}
+.hd-year{display:flex;align-items:center;gap:6px;padding:0 18px;border-right:1px solid rgba(255,255,255,.1)}
+.yr-btn{background:none;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.7);width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:.15s}
+.yr-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.yr-lbl{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;color:#fff;min-width:48px;text-align:center}
+.hd-tabs{display:flex;align-items:stretch;margin-left:auto}
+.c-tab{padding:0 26px;display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:600;font-size:13px;letter-spacing:.4px;cursor:pointer;border-left:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45);border-bottom:3px solid transparent;transition:.2s;user-select:none}
+.c-tab:hover{color:rgba(255,255,255,.75)}
+.c-tab.active.se{color:#fff;border-bottom-color:#FECC02}
+.c-tab.active.de{color:#fff;border-bottom-color:#FFCE00}
+.flag{font-size:18px}
+
+/* ── CONTROLS ── */
+.controls{height:var(--controls-h);background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;padding:0 16px;position:sticky;top:var(--header-h);z-index:90;flex-wrap:nowrap}
+.view-toggle{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0}
+.v-btn{padding:5px 13px;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:500;cursor:pointer;color:var(--text-muted);transition:.15s;white-space:nowrap}
+.v-btn.active{background:var(--text);color:#fff}
+.divider{width:1px;height:26px;background:var(--border);flex-shrink:0}
+.month-nav{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.mn-btn{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;background:var(--surface);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.15s;color:var(--text)}
+.mn-btn:hover{background:var(--text);color:#fff;border-color:var(--text)}
+.mn-lbl{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;min-width:130px;text-align:center}
+.actions{margin-left:auto;display:flex;gap:7px;flex-shrink:0}
+.btn{padding:5px 12px;border:1px solid var(--border);border-radius:6px;background:var(--surface);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;color:var(--text);transition:.15s;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.btn:hover{background:var(--bg)}
+.btn.pri{background:var(--text);color:#fff;border-color:var(--text)}
+.btn.pri:hover{opacity:.85}
+
+/* ── LEGEND ── */
+.legend{display:flex;gap:14px;flex-wrap:wrap;padding:7px 16px;background:var(--bg);border-bottom:1px solid var(--border);font-size:11px;color:var(--text-muted)}
+.leg-i{display:flex;align-items:center;gap:5px}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ── GRID ── */
+.grid-wrap{overflow:auto;max-height:calc(100vh - var(--header-h) - var(--controls-h) - 34px)}
+table{border-collapse:collapse;width:max-content;min-width:100%}
+
+/* Column widths */
+.col-label{width:var(--label-w);min-width:var(--label-w);max-width:var(--label-w)}
+.col-data{width:170px;min-width:170px}
+
+/* Head */
+thead th{background:var(--text);color:rgba(255,255,255,.9);position:sticky;top:0;z-index:20;font-family:'Syne',sans-serif;font-weight:600;font-size:12px;white-space:nowrap}
+thead th.col-label{z-index:30;left:0}
+.th-inner{padding:8px 12px;border-right:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:2px;min-height:42px;justify-content:center}
+.th-main{font-size:13px;letter-spacing:.2px}
+.th-sub{font-size:10px;font-weight:400;opacity:.55;letter-spacing:.1px}
+
+/* Group rows */
+.group-row td{background:#111116;color:rgba(255,255,255,.45);font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;position:sticky;left:0}
+.group-row td.span-all{position:static}
+
+/* Data rows */
+tbody tr.data-row:hover td.cell{background:#fafaf8}
+tbody tr.data-row:hover td.row-label{background:#f8f7f5}
+
+td.row-label{background:var(--surface);position:sticky;left:0;z-index:5;border-right:3px solid var(--gc,#ccc);border-bottom:1px solid var(--border);vertical-align:middle}
+.rl-inner{padding:7px 11px;display:flex;align-items:flex-start;gap:7px;min-height:52px}
+.rl-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.rl-text{}
+.rl-name{font-size:12.5px;font-weight:500;line-height:1.3;color:var(--text)}
+.rl-new{display:inline-block;background:#16803d;color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:.5px;margin-left:4px;vertical-align:middle}
+
+td.cell{padding:0;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:top;background:var(--surface)}
+td.cell.row-holidays{background:#fffbf0}
+td.cell.row-themedays{background:#f9f7ff}
+
+.cell-inner{padding:6px 9px;min-height:52px;font-size:12px;line-height:1.45;color:var(--text);cursor:text;white-space:pre-wrap;word-break:break-word;outline:none;transition:background .1s}
+.cell-inner[contenteditable="true"]:focus{box-shadow:inset 0 0 0 2px var(--accent);background:#fff}
+.cell-inner.holidays-text{color:#b91c1c;font-weight:500;font-size:11.5px}
+.cell-inner.theme-text{color:#5b21b6;font-size:11.5px}
+.cell-inner:empty::after{content:attr(data-ph);color:#ccc;font-style:italic;pointer-events:none}
+
+/* Status cell */
+.status-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;user-select:none;margin:4px 0;transition:.15s}
+.sp-none{background:#f0f0f0;color:#aaa}
+.sp-planned{background:#dbeafe;color:#1d4ed8}
+.sp-active{background:#dcfce7;color:#166534}
+.sp-done{background:#f3e8ff;color:#6d28d9}
+.sp-risk{background:#fff7ed;color:#c2410c}
+
+/* Modal */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;align-items:center;justify-content:center}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:12px;width:480px;max-width:95vw;max-height:88vh;overflow:auto;box-shadow:0 24px 80px rgba(0,0,0,.3);animation:modalIn .2s ease}
+@keyframes modalIn{from{transform:scale(.96) translateY(8px);opacity:0}to{transform:none;opacity:1}}
+.modal-head{padding:18px 22px 0;display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-family:'Syne',sans-serif;font-weight:700;font-size:15px}
+.modal-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-muted);line-height:1;padding:2px 6px;border-radius:4px}
+.modal-close:hover{background:var(--bg)}
+.modal-body{padding:16px 22px 22px;display:flex;flex-direction:column;gap:14px}
+.mf label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:5px}
+.mf textarea,.mf select,.mf input{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--text)}
+.mf textarea{resize:vertical;min-height:70px}
+.mf textarea:focus,.mf select:focus,.mf input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,91,153,.1)}
+.modal-foot{display:flex;justify-content:flex-end;gap:8px;padding:0 22px 18px}
+
+/* Toast */
+.toast{position:fixed;bottom:22px;right:22px;background:var(--text);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;transform:translateY(80px);transition:transform .28s;z-index:1000;pointer-events:none}
+.toast.show{transform:translateY(0)}
+
+/* Country label in grid header */
+.country-badge{display:inline-block;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.5px;margin-left:6px}
+.cb-se{background:#005B99;color:#FECC02}
+.cb-de{background:#C10E1B;color:#FFCE00}
+
+@media print{
+  .header,.controls,.legend{display:none!important}
+  .grid-wrap{max-height:none;overflow:visible}
+  .cell-inner{min-height:36px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="hd-brand">📋 Marknadsplan <span>SE / DE</span></div>
+  <div class="hd-year">
+    <button class="yr-btn" onclick="changeYear(-1)">‹</button>
+    <span class="yr-lbl" id="yrLbl">2026</span>
+    <button class="yr-btn" onclick="changeYear(1)">›</button>
+  </div>
+  <div class="hd-tabs">
+    <div class="c-tab se active flag-tab" onclick="setCountry('SE')"><span class="flag">🇸🇪</span>Sverige</div>
+    <div class="c-tab de flag-tab" onclick="setCountry('DE')"><span class="flag">🇩🇪</span>Deutschland</div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="view-toggle">
+    <button class="v-btn active" id="btnYear" onclick="setView('year')">Årsöversikt</button>
+    <button class="v-btn" id="btnMonth" onclick="setView('month')">Månadsvy (veckor)</button>
+  </div>
+  <div class="divider"></div>
+  <div class="month-nav" id="monthNav" style="display:none">
+    <button class="mn-btn" onclick="changeMonth(-1)">‹</button>
+    <div class="mn-lbl" id="mnLbl">—</div>
+    <button class="mn-btn" onclick="changeMonth(1)">›</button>
+  </div>
+  <div class="actions">
+    <button class="btn" onclick="exportJSON()">↓ Exportera JSON</button>
+    <button class="btn" onclick="document.getElementById('importFile').click()">↑ Importera JSON</button>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)">
+    <button class="btn" onclick="resetHolidays()" title="Återställ röda dagar och temadagar till korrekt landsspecifik data">↺ Återställ helgdagar</button>
+    <button class="btn" onclick="window.print()">🖨 Skriv ut</button>
+  </div>
+</div>
+
+<div class="legend">
+  <span style="font-weight:600;font-size:11px;color:var(--text-muted)">GRUPPERINGAR:</span>
+  <span class="leg-i"><span class="leg-dot" style="background:var(--g-kontext)"></span>Datum & kontext</span>
+  <span class="leg-i"><span class="leg-dot" style="background:var(--g-strategy)"></span>Strategi</span>
+  <span class="leg-i"><span class="leg-dot" style="background:var(--g-logistics)"></span>Logistik</span>
+  <span class="leg-i"><span class="leg-dot" style="background:var(--g-activation)"></span>Aktivering</span>
+  <span class="leg-i"><span class="leg-dot" style="background:var(--g-comms)"></span>Kommunikation</span>
+  <span class="leg-i"><span class="leg-dot" style="background:var(--g-followup)"></span>Uppföljning</span>
+  <span class="leg-i" style="margin-left:auto"><span style="background:#dcfce7;color:#166534;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600">NY</span> = tillagd rad</span>
+  <span class="leg-i"><span style="font-size:10px;opacity:.6">* = gäller ej alla delstater (DE)</span></span>
+</div>
+
+<div class="grid-wrap">
+  <table id="planTable"><thead id="planHead"></thead><tbody id="planBody"></tbody></table>
+</div>
+
+<!-- Edit modal (for rich cell editing) -->
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" id="modalTitle">Redigera cell</div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button class="btn" onclick="closeModal()">Avbryt</button>
+      <button class="btn pri" onclick="saveModal()">Spara</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ────────────────────────────────────────────
+   DATA DEFINITIONS
+──────────────────────────────────────────── */
+const MONTHS_LONG = {
+  SE:['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'],
+  DE:['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December']
+};
+const MONTHS_SHORT = {
+  SE:['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'],
+  DE:['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec']
+};
+
+const STATUS_CYCLE = ['','Planerad','Aktiv','Klar','⚠️ Risk'];
+const STATUS_CLASS = {'':'sp-none','Planerad':'sp-planned','Aktiv':'sp-active','Klar':'sp-done','⚠️ Risk':'sp-risk'};
+const STATUS_ICON = {'':'○','Planerad':'◔','Aktiv':'◕','Klar':'●','⚠️ Risk':'⚠'};
+
+const ROW_GROUPS = [
+  { id:'kontext', label:'📅 DATUM & KONTEXT', cssVar:'--g-kontext',
+    rows:[
+      {id:'holidays',  icon:'🔴', name:'Röda dagar & helgdagar'},
+      {id:'themedays', icon:'🎯', name:'Temadagar & kommersiellt fokus'},
+    ]
+  },
+  { id:'strategy', label:'🎯 STRATEGI', cssVar:'--g-strategy',
+    rows:[
+      {id:'segment',  icon:'👥', name:'Målgrupp / segment', isNew:true},
+      {id:'category', icon:'📦', name:'Prioriterad kategori'},
+      {id:'sku',      icon:'🏷️', name:'Prioriterat varumärke / SKU'},
+    ]
+  },
+  { id:'logistics', label:'📦 LOGISTIK', cssVar:'--g-logistics',
+    rows:[
+      {id:'shipping', icon:'🚚', name:'Frakt / leverans'},
+      {id:'risk',     icon:'⚠️', name:'Lager- eller marginalrisk'},
+      {id:'budget',   icon:'💰', name:'Budget (allokerat / utfall)', isNew:true},
+    ]
+  },
+  { id:'activation', label:'🚀 AKTIVERING', cssVar:'--g-activation',
+    rows:[
+      {id:'campaign', icon:'🎁', name:'Kampanj / erbjudande'},
+      {id:'deadline', icon:'⏰', name:'Deadline material', isNew:true},
+      {id:'seo',      icon:'🔍', name:'SEO-sida / sökord'},
+      {id:'content',  icon:'✍️', name:'Content att skapa / uppdatera'},
+      {id:'pr',       icon:'📰', name:'PR-vinkel'},
+    ]
+  },
+  { id:'comms', label:'📣 KOMMUNIKATION', cssVar:'--g-comms',
+    rows:[
+      {id:'linkedin', icon:'💼', name:'LinkedIn / extern kommunikation'},
+      {id:'crm',      icon:'📧', name:'Nyhetsbrev / CRM'},
+      {id:'onsite',   icon:'🛒', name:'Onsite-yta / merchandising'},
+      {id:'paid',     icon:'📱', name:'Paid / social'},
+    ]
+  },
+  { id:'followup', label:'✅ UPPFÖLJNING', cssVar:'--g-followup',
+    rows:[
+      {id:'owner',   icon:'👤', name:'Ansvarig'},
+      {id:'status',  icon:'🔵', name:'Status', isStatus:true},
+      {id:'results', icon:'📊', name:'Resultat / lärdomar'},
+    ]
+  },
+];
+
+/* ─── Pre-populated holidays & theme days ─── */
+const DEFAULT = {
+  SE:{
+    '2025':{
+      M0:{holidays:'Nyårsdagen 1/1 🎆\nTrettondag jul 6/1',themedays:'Tjugondag Knut 13/1\nVinterrea'},
+      M1:{holidays:'',themedays:'Alla hjärtans dag 14/2 ❤️\nFettisdagen 4/3'},
+      M2:{holidays:'',themedays:'Internationella kvinnodagen 8/3 👩'},
+      M3:{holidays:'Långfredagen 18/4\nPåskdagen 20/4\nAnnandag påsk 21/4',themedays:'Påsk 🐣 → Godis & gåvor'},
+      M4:{holidays:'Första maj 1/5\nKristi himmelsfärd 29/5',themedays:'Valborg 30/4\nMors dag 25/5 🌸'},
+      M5:{holidays:'Pingstdagen 8/6\nNationaldagen 6/6',themedays:'Sommarsäsong 🌞'},
+      M6:{holidays:'Midsommarafton 20/6\nMidsommardagen 21/6',themedays:'Midsommar → Grill & dryck'},
+      M7:{holidays:'',themedays:'Sommarsemester ☀️'},
+      M8:{holidays:'',themedays:'Back-to-school 📚'},
+      M9:{holidays:'',themedays:'Halloween 31/10 🎃'},
+      M10:{holidays:'Alla helgons dag 1/11',themedays:'Singles Day 11/11\nBlack Friday 28/11 🛍️\nCyber Monday 1/12'},
+      M11:{holidays:'Julafton 24/12\nJuldagen 25/12\nAnnandag jul 26/12\nNyårsafton 31/12',themedays:'Lucia 13/12 🕯️\nJulkampanjer 🎅\nNyår → Nyårslöften'},
+    },
+    '2026':{
+      M0:{holidays:'Nyårsdagen 1/1 🎆\nTrettondag jul 6/1',themedays:'Tjugondag Knut 13/1\nVinterrea'},
+      M1:{holidays:'',themedays:'Alla hjärtans dag 14/2 ❤️\nFettisdagen 17/2'},
+      M2:{holidays:'',themedays:'Internationella kvinnodagen 8/3 👩'},
+      M3:{holidays:'Långfredagen 3/4\nPåskdagen 5/4\nAnnandag påsk 6/4',themedays:'Påsk 🐣 → Godis & gåvor'},
+      M4:{holidays:'Första maj 1/5\nKristi himmelsfärd 14/5',themedays:'Valborg 30/4\nMors dag 31/5 🌸'},
+      M5:{holidays:'Pingstdagen 24/5\nNationaldagen 6/6',themedays:'Sommarsäsong 🌞'},
+      M6:{holidays:'Midsommarafton 19/6\nMidsommardagen 20/6',themedays:'Midsommar → Grill & dryck'},
+      M7:{holidays:'',themedays:'Sommarsemester ☀️'},
+      M8:{holidays:'',themedays:'Back-to-school 📚'},
+      M9:{holidays:'',themedays:'Halloween 31/10 🎃'},
+      M10:{holidays:'Alla helgons dag 7/11',themedays:'Singles Day 11/11\nBlack Friday 27/11 🛍️\nCyber Monday 30/11'},
+      M11:{holidays:'Julafton 24/12\nJuldagen 25/12\nAnnandag jul 26/12\nNyårsafton 31/12',themedays:'Lucia 13/12 🕯️\nJulkampanjer 🎅\nNyår → Nyårslöften'},
+    },
+    '2027':{
+      M0:{holidays:'Nyårsdagen 1/1 🎆\nTrettondag jul 6/1',themedays:'Vinterrea'},
+      M1:{holidays:'',themedays:'Alla hjärtans dag 14/2 ❤️'},
+      M2:{holidays:'',themedays:'Internationella kvinnodagen 8/3 👩'},
+      M3:{holidays:'Långfredagen 26/3\nPåskdagen 28/3\nAnnandag påsk 29/3',themedays:'Påsk 🐣'},
+      M4:{holidays:'Första maj 1/5\nKristi himmelsfärd 6/5',themedays:'Valborg 30/4\nMors dag 30/5 🌸'},
+      M5:{holidays:'Pingstdagen 16/5\nNationaldagen 6/6',themedays:'Sommarsäsong 🌞'},
+      M6:{holidays:'Midsommarafton 25/6\nMidsommardagen 26/6',themedays:'Midsommar → Grill & dryck'},
+      M7:{holidays:'',themedays:'Sommarsemester ☀️'},
+      M8:{holidays:'',themedays:'Back-to-school 📚'},
+      M9:{holidays:'',themedays:'Halloween 31/10 🎃'},
+      M10:{holidays:'Alla helgons dag 6/11',themedays:'Singles Day 11/11\nBlack Friday 26/11 🛍️'},
+      M11:{holidays:'Julafton 24/12\nJuldagen 25/12\nAnnandag jul 26/12\nNyårsafton 31/12',themedays:'Lucia 13/12 🕯️\nJulkampanjer 🎅'},
+    }
+  },
+  DE:{
+    '2025':{
+      M0:{holidays:'Nyårsdagen 1/1 🎆\nHeliga tre konungar 6/1 ✦',themedays:'Vintersale\nKarnevalssäsong börjar'},
+      M1:{holidays:'',themedays:'Alla hjärtans dag 14/2 ❤️\nKarneval / Fasching 🎭'},
+      M2:{holidays:'',themedays:'Internationella kvinnodagen 8/3 👩\nFastetiden'},
+      M3:{holidays:'Karfreitag (Långfredag) 18/4\nPåskdagen 20/4\nAnnandag påsk 21/4',themedays:'Påsk 🐣 → Choklad & presenter'},
+      M4:{holidays:'Första maj 1/5\nChristi Himmelfahrt (Kristi himmelsfärd) 29/5',themedays:'Mors dag 11/5 🌸\nFars dag / Männerdag 29/5 🍺'},
+      M5:{holidays:'Pingstdagen 8/6\nAnnandag pingst 9/6\nFronleichnam (Kristi lekamen) 19/6 ✦',themedays:'Sommarstart 🌞'},
+      M6:{holidays:'',themedays:'Sommarlov (varierar per delstat) 🏖️'},
+      M7:{holidays:'Mariä himmelsfärd 15/8 ✦',themedays:'Sommarlov\nOktoberfest börjar 20/9 🍺'},
+      M8:{holidays:'',themedays:'Oktoberfest 🍺\nBack-to-school'},
+      M9:{holidays:'Tyska enhetsdagen 3/10 🇩🇪\nReformationsdagen 31/10 ✦',themedays:'Halloween 31/10 🎃'},
+      M10:{holidays:'Allhelgonadagen 1/11 ✦\nBuß- und Bettag (Bot- och böndag) 19/11 ✦',themedays:'Singles Day 11/11\nS:t Nikolaus 6/12\nBlack Friday 28/11 🛍️\nAdventsstart'},
+      M11:{holidays:'Julafton 24/12\nJuldagen 25/12\nAnnandag jul 26/12\nNyårsafton 31/12',themedays:'Adventstid 🕯️\nJulkampanjer 🎅\nNyår → Nyårslöften'},
+    },
+    '2026':{
+      M0:{holidays:'Nyårsdagen 1/1 🎆\nHeliga tre konungar 6/1 ✦',themedays:'Vintersale\nKarnevalssäsong börjar'},
+      M1:{holidays:'',themedays:'Alla hjärtans dag 14/2 ❤️\nKarneval / Fasching 🎭'},
+      M2:{holidays:'',themedays:'Internationella kvinnodagen 8/3 👩\nFastetiden'},
+      M3:{holidays:'Karfreitag (Långfredag) 3/4\nPåskdagen 5/4\nAnnandag påsk 6/4',themedays:'Påsk 🐣 → Choklad & presenter'},
+      M4:{holidays:'Första maj 1/5\nChristi Himmelfahrt (Kristi himmelsfärd) 14/5',themedays:'Mors dag 10/5 🌸\nFars dag / Männerdag 14/5 🍺'},
+      M5:{holidays:'Pingstdagen 24/5\nAnnandag pingst 25/5\nFronleichnam (Kristi lekamen) 4/6 ✦',themedays:'Sommarstart 🌞'},
+      M6:{holidays:'',themedays:'Sommarlov (varierar per delstat) 🏖️'},
+      M7:{holidays:'Mariä himmelsfärd 15/8 ✦',themedays:'Sommarlov\nOktoberfest börjar 19/9 🍺'},
+      M8:{holidays:'',themedays:'Oktoberfest 🍺\nBack-to-school'},
+      M9:{holidays:'Tyska enhetsdagen 3/10 🇩🇪\nReformationsdagen 31/10 ✦',themedays:'Halloween 31/10 🎃'},
+      M10:{holidays:'Allhelgonadagen 1/11 ✦\nBuß- und Bettag (Bot- och böndag) 18/11 ✦',themedays:'Singles Day 11/11\nS:t Nikolaus 6/12\nBlack Friday 27/11 🛍️\nAdventsstart'},
+      M11:{holidays:'Julafton 24/12\nJuldagen 25/12\nAnnandag jul 26/12\nNyårsafton 31/12',themedays:'Adventstid 🕯️\nJulkampanjer 🎅\nNyår → Nyårslöften'},
+    },
+    '2027':{
+      M0:{holidays:'Nyårsdagen 1/1 🎆\nHeliga tre konungar 6/1 ✦',themedays:'Vintersale'},
+      M1:{holidays:'',themedays:'Alla hjärtans dag 14/2 ❤️\nKarneval 🎭'},
+      M2:{holidays:'',themedays:'Internationella kvinnodagen 8/3 👩\nFastetiden'},
+      M3:{holidays:'Karfreitag (Långfredag) 26/3\nPåskdagen 28/3\nAnnandag påsk 29/3',themedays:'Påsk 🐣'},
+      M4:{holidays:'Första maj 1/5\nChristi Himmelfahrt 6/5',themedays:'Mors dag 9/5 🌸'},
+      M5:{holidays:'Pingstdagen 16/5\nAnnandag pingst 17/5',themedays:'Sommarstart 🌞'},
+      M6:{holidays:'',themedays:'Sommarlov 🏖️'},
+      M7:{holidays:'Mariä himmelsfärd 15/8 ✦',themedays:'Sommarlov'},
+      M8:{holidays:'',themedays:'Oktoberfest 🍺'},
+      M9:{holidays:'Tyska enhetsdagen 3/10 🇩🇪',themedays:'Halloween 31/10 🎃'},
+      M10:{holidays:'Allhelgonadagen 1/11 ✦',themedays:'Singles Day 11/11\nBlack Friday 26/11 🛍️'},
+      M11:{holidays:'Julafton 24/12\nJuldagen 25/12\nAnnandag jul 26/12\nNyårsafton 31/12',themedays:'Adventstid 🕯️\nJulkampanjer 🎅'},
+    }
+  }
+};
+
+/* ────────────────────────────────────────────
+   STATE
+──────────────────────────────────────────── */
+let state = { country:'SE', year:'2026', view:'year', month:0 };
+// planData[country][year][colKey][rowId] = string
+let planData = {};
+
+function getData(country, year, colKey, rowId) {
+  return planData?.[country]?.[year]?.[colKey]?.[rowId] ?? '';
+}
+
+function setData(country, year, colKey, rowId, val) {
+  if (!planData[country]) planData[country] = {};
+  if (!planData[country][year]) planData[country][year] = {};
+  if (!planData[country][year][colKey]) planData[country][year][colKey] = {};
+  planData[country][year][colKey][rowId] = val;
+  saveLocal();
+}
+
+/* ────────────────────────────────────────────
+   PERSISTENCE
+──────────────────────────────────────────── */
+function saveLocal() {
+  try { localStorage.setItem('mkt_plan_v2', JSON.stringify(planData)); } catch(e){}
+}
+
+function loadLocal() {
+  try {
+    const raw = localStorage.getItem('mkt_plan_v2');
+    if (raw) planData = JSON.parse(raw);
+  } catch(e) {}
+}
+
+const DEFAULTS_VERSION = '3'; // Höj vid korrigering av helgdagsdata
+
+function mergeDefaults(forceOverwrite) {
+  const storedV = localStorage.getItem('mkt_defaults_v');
+  const mustOverwrite = forceOverwrite || storedV !== DEFAULTS_VERSION;
+  ['SE','DE'].forEach(c => {
+    ['2025','2026','2027'].forEach(y => {
+      const src = DEFAULT[c]?.[y] || {};
+      Object.keys(src).forEach(mk => {
+        ['holidays','themedays'].forEach(rid => {
+          const existing = getData(c, y, mk, rid);
+          if (mustOverwrite || existing === '') {
+            const v = src[mk]?.[rid];
+            if (v !== undefined) setData(c, y, mk, rid, v || '');
+          }
+        });
+      });
+    });
+  });
+  if (mustOverwrite) {
+    localStorage.setItem('mkt_defaults_v', DEFAULTS_VERSION);
+    saveLocal();
+  }
+}
+
+function resetHolidays() {
+  if (!confirm('Återställer alla röda dagar och temadagar till standarddata.\nEgna ändringar i dessa rader skrivs över. Fortsätta?')) return;
+  mergeDefaults(true);
+  render();
+  showToast('Helgdagar återställda ✓');
+}
+
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(planData, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `marknadsplan_${state.country}_${state.year}.json`;
+  a.click();
+  showToast('Exporterat! ✓');
+}
+
+function importJSON(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const imported = JSON.parse(ev.target.result);
+      planData = {...planData, ...imported};
+      saveLocal();
+      render();
+      showToast('Importerat! ✓');
+    } catch(err) { alert('Ogiltig JSON-fil.'); }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+}
+
+/* ────────────────────────────────────────────
+   WEEK HELPERS
+──────────────────────────────────────────── */
+function getISOWeek(d) {
+  const t = new Date(d);
+  t.setHours(0,0,0,0);
+  t.setDate(t.getDate() + 3 - (t.getDay()+6)%7);
+  const w1 = new Date(t.getFullYear(),0,4);
+  return 1 + Math.round(((t - w1)/86400000 - 3 + (w1.getDay()+6)%7)/7);
+}
+
+function getWeeksInMonth(year, month) {
+  const firstDay = new Date(year, month, 1);
+  const lastDay  = new Date(year, month+1, 0);
+  const weeks = [];
+  let ws = new Date(firstDay);
+  while (ws.getDay() !== 1) ws.setDate(ws.getDate()-1);
+  while (ws <= lastDay) {
+    const we = new Date(ws); we.setDate(we.getDate()+6);
+    const overlapS = new Date(Math.max(ws.getTime(), firstDay.getTime()));
+    const overlapE = new Date(Math.min(we.getTime(), lastDay.getTime()));
+    const wn = getISOWeek(ws);
+    weeks.push({ wn, start:overlapS, end:overlapE, key:`M${month}W${wn}` });
+    ws.setDate(ws.getDate()+7);
+  }
+  return weeks;
+}
+
+function fmtDate(d) { return `${d.getDate()}/${d.getMonth()+1}`; }
+
+/* ────────────────────────────────────────────
+   RENDERING
+──────────────────────────────────────────── */
+function getColumns() {
+  const yr = parseInt(state.year);
+  const ms = MONTHS_SHORT[state.country];
+  if (state.view === 'year') {
+    return Array.from({length:12}, (_,i) => ({
+      key: `M${i}`,
+      label: ms[i],
+      sub: yr
+    }));
+  } else {
+    const m = state.month;
+    const weeks = getWeeksInMonth(yr, m);
+    return weeks.map(w => ({
+      key: w.key,
+      label: `V.${w.wn}`,
+      sub: `${fmtDate(w.start)} – ${fmtDate(w.end)}`
+    }));
+  }
+}
+
+function render() {
+  const cols = getColumns();
+  renderHead(cols);
+  renderBody(cols);
+  updateUI();
+}
+
+function renderHead(cols) {
+  const head = document.getElementById('planHead');
+  const badge = state.country === 'SE'
+    ? '<span class="country-badge cb-se">🇸🇪 SE</span>'
+    : '<span class="country-badge cb-de">🇩🇪 DE</span>';
+  let html = `<tr><th class="col-label"><div class="th-inner"><span style="font-family:Syne;font-weight:700">Marknadsplan${badge}</span></div></th>`;
+  cols.forEach(c => {
+    html += `<th class="col-data"><div class="th-inner"><div class="th-main">${c.label}</div><div class="th-sub">${c.sub}</div></div></th>`;
+  });
+  html += '</tr>';
+  head.innerHTML = html;
+}
+
+function renderBody(cols) {
+  const body = document.getElementById('planBody');
+  let html = '';
+  ROW_GROUPS.forEach(grp => {
+    const color = `var(${grp.cssVar})`;
+    // Group header spanning all columns
+    html += `<tr class="group-row"><td colspan="${cols.length+1}">${grp.label}</td></tr>`;
+    grp.rows.forEach(row => {
+      const newBadge = row.isNew ? '<span class="rl-new">NY</span>' : '';
+      html += `<tr class="data-row" data-row="${row.id}" data-grp="${grp.id}">`;
+      html += `<td class="row-label col-label" style="--gc:${color}">
+        <div class="rl-inner">
+          <span class="rl-icon">${row.icon}</span>
+          <div class="rl-text"><span class="rl-name">${row.name}</span>${newBadge}</div>
+        </div></td>`;
+      cols.forEach(c => {
+        const val = getData(state.country, state.year, c.key, row.id);
+        html += buildCell(row, c.key, val);
+      });
+      html += '</tr>';
+    });
+  });
+  body.innerHTML = html;
+
+  // Attach listeners
+  body.querySelectorAll('.cell-inner[contenteditable="true"]').forEach(el => {
+    el.addEventListener('blur', onCellBlur);
+    el.addEventListener('keydown', onCellKeydown);
+  });
+  body.querySelectorAll('.status-pill').forEach(el => {
+    el.addEventListener('click', cycleStatus);
+  });
+}
+
+function buildCell(row, colKey, val) {
+  const isHol = row.id === 'holidays';
+  const isTh  = row.id === 'themedays';
+  const cellClass = isHol ? 'row-holidays' : isTh ? 'row-themedays' : '';
+  const textClass = isHol ? 'holidays-text' : isTh ? 'theme-text' : '';
+
+  if (row.isStatus) {
+    const cls = STATUS_CLASS[val] || 'sp-none';
+    const ico = STATUS_ICON[val] || '○';
+    const lbl = val || 'Ej satt';
+    return `<td class="cell ${cellClass}" data-col="${colKey}" data-row="${row.id}">
+      <div class="cell-inner" style="padding:10px 9px">
+        <span class="status-pill ${cls}" data-col="${colKey}" data-row="${row.id}">${ico} ${lbl}</span>
+      </div></td>`;
+  }
+
+  const ph = isHol ? 'Röda dagar…' : isTh ? 'Temadagar…' : '';
+  return `<td class="cell ${cellClass}" data-col="${colKey}" data-row="${row.id}">
+    <div class="cell-inner ${textClass}" contenteditable="true"
+         data-col="${colKey}" data-row="${row.id}"
+         data-ph="${ph}">${escHtml(val)}</div></td>`;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ────────────────────────────────────────────
+   CELL INTERACTIONS
+──────────────────────────────────────────── */
+function onCellBlur(e) {
+  const el = e.target;
+  const col = el.dataset.col;
+  const row = el.dataset.row;
+  const val = el.innerText.trim();
+  setData(state.country, state.year, col, row, val);
+}
+
+function onCellKeydown(e) {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    const all = Array.from(document.querySelectorAll('.cell-inner[contenteditable="true"]'));
+    const idx = all.indexOf(e.target);
+    const next = e.shiftKey ? all[idx-1] : all[idx+1];
+    if (next) next.focus();
+  }
+}
+
+function cycleStatus(e) {
+  const el = e.currentTarget;
+  const col = el.dataset.col;
+  const row = el.dataset.row;
+  const cur = getData(state.country, state.year, col, row);
+  const idx = STATUS_CYCLE.indexOf(cur);
+  const next = STATUS_CYCLE[(idx+1) % STATUS_CYCLE.length];
+  setData(state.country, state.year, col, row, next);
+  const cls = STATUS_CLASS[next] || 'sp-none';
+  el.className = `status-pill ${cls}`;
+  el.textContent = `${STATUS_ICON[next]||'○'} ${next || 'Ej satt'}`;
+}
+
+/* ────────────────────────────────────────────
+   UI STATE
+──────────────────────────────────────────── */
+function updateUI() {
+  const {country, year, view, month} = state;
+  document.getElementById('yrLbl').textContent = year;
+  document.getElementById('btnYear').classList.toggle('active', view==='year');
+  document.getElementById('btnMonth').classList.toggle('active', view==='month');
+  document.getElementById('monthNav').style.display = view==='month' ? 'flex' : 'none';
+  document.querySelectorAll('.c-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.c-tab.${country.toLowerCase()}`).classList.add('active');
+  document.documentElement.style.setProperty('--accent', country==='SE' ? '#005B99' : '#C10E1B');
+  if (view==='month') {
+    document.getElementById('mnLbl').textContent = MONTHS_LONG[country][month];
+  }
+}
+
+function setCountry(c) {
+  state.country = c;
+  render();
+}
+
+function changeYear(d) {
+  const y = parseInt(state.year) + d;
+  if (y < 2024 || y > 2030) return;
+  state.year = String(y);
+  mergeDefaults();
+  render();
+}
+
+function setView(v) {
+  state.view = v;
+  render();
+}
+
+function changeMonth(d) {
+  state.month = (state.month + d + 12) % 12;
+  render();
+}
+
+/* ────────────────────────────────────────────
+   MODAL (kept for future use / bulk edit)
+──────────────────────────────────────────── */
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modalBg')) return;
+  document.getElementById('modalBg').classList.remove('open');
+}
+function saveModal() { closeModal(); }
+
+/* ────────────────────────────────────────────
+   TOAST
+──────────────────────────────────────────── */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ────────────────────────────────────────────
+   INIT
+──────────────────────────────────────────── */
+loadLocal();
+mergeDefaults();
+render();
+
+// Autosave on visibility change (e.g. tab switch)
+document.addEventListener('visibilitychange', () => { if(document.hidden) saveLocal(); });
+</script>
+</body>
+</html>
